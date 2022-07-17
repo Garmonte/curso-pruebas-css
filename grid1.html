@@ -6,28 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
-            display:grid;
-            
+        * {
+            border: 0;
+            padding: 0;
+            margin: 0;
         }
-        .container div {
-            border: 1px solid red;
+        .container{
+            height: 98vh;
+            display: grid;
+            grid: 'header header'
+                  'nav main'
+                  'footer footer';
+            grid-template-columns: 10vw 1fr;
+            grid-template-rows: 10vh 1fr 5vh;
+        }
+        .container > div{
             padding: 10px;
-
+            border: 1px solid red;
+        }
+        .header{
+            grid-area: header;
+        }
+        .main{
+            grid-area: main;
+        }
+        .nav{
+            grid-area: nav;
+        }
+        .aside{
+            display: none;
+            grid-area: aside;
+        }
+        .footer{
+            grid-area: footer;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div>1</div>
-        <div>2</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
+        <div class="header">HEADER</div>
+        <div class="nav">NAV</div>
+        <div class="main">MAIN</div>
+        <div class="aside">ASIDE</div>
+        <div class="footer">FOOTER</div>
     </div>
 </body>
 </html>
