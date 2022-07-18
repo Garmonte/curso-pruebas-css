@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+            grid-area:header
+        }
+        .nav {
+            grid-area:nav
+        }
+        .main {
+            grid-area:main
+        }
+        .aside {
+            grid-area:aside
+        }
+        .footer {
+            grid-area:footer
+        }
+
+        .header,
+        .aside, 
+        .nav,
+        .navtablet, 
+        .main, 
+        .footer {
+            border: 1px solid red;
+            padding: 10px;
+        }
+
+            .mainTablet{
+                display: none;
+            }
+            .aside{
+                display: none;
+            }
+            .nav {
+                display: none;
+            }
+            body{
+                display: grid;
+                grid: 'header'
+                      'main'
+                      'footer';
+                grid-template-rows: 10vh 77vh 10vh;
+            }
+    
+        @media (min-width: 768px) {
+            .mainTablet{
+                display: block;
+            }
+            .aside{
+                display: none;
+            }
+            .nav {
+                display: none;
+            }
+            .navtablet {
+                display: block;
+            }
+            body{
+                display: grid;
+                grid: 'header header'
+                      'navtablet main'
+                      'footer footer';
+                grid-template-columns: 15vw auto;
+                grid-template-rows: 10vh 77vh 10vh;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .mainTablet{
+                display: none;
+            }
+            .aside{
+                display: none;
+            }
+            .nav {
+                display: block;
+            }
+            .navtablet {
+                display: none;
+            }
+            body{
+                display: grid;
+                grid: 'header header'
+                      'nav main'
+                      'footer footer';
+                grid-template-columns: 10vw auto;
+                grid-template-rows: 10vh 77vh 10vh;
+            }
+        }
+        @media (min-width: 1400px) {
+            .mainTablet{
+                display: none;
+            }
+            .aside{
+                display: block;
+            }
+            .nav {
+                display: block;
+            }
+            .navtablet {
+                display: none;
+            }
+            }
+            body{
+                display: grid;
+                grid: 'header header header'
+                      'nav main aside'
+                      'footer footer footer';
+                grid-template-columns: 10vw auto 10vw;
+                grid-template-rows: 10vh 77vh 10vh;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">header</header>
+    <footer class="footer">footer</footer>
+    <main class="main">main</main>
+        <div class="mainTablet">solocuando es una tablet</div>
+    <nav class="nav">nav</nav>
+    <navtablet class="navtablet">navtablet</navtablet>
+    <aside class="aside">aside</aside>
+    
+
+</body>
+</html>
